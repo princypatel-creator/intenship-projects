@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Form</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+ background:linear-gradient(23deg, blue, transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.form-box {
+  background:white;
+  padding: 24px;
+  width: 390px;
+  border-radius: 10px;
+  outline: 3px solid darkblue;
+  box-shadow: 0 4px 2px rgba(13, 53, 53, 0.1);
+}
+
+h2 {
+  margin-top: 0;
+  font-size:25px;
+  text-align: center;
+}
+h2:hover{
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size:23px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: 2px solid darkblue;
+  border-radius: 6px;
+  font-size: 14px;
+}
+input:hover, textarea:hover {
+    background-color:lightblue;
+    color:black;
+    font-weight:bold;
+}
+button {
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size:24px;
+}
+
+button:hover {
+  background: none;
+  color:black;
+  border:3px solid #4a90e2;
+}
+
+#error {
+  margin-top: 8px;
+  color: red;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Login Form</h2>
+    <form id="form">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter your name">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Enter your email">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password">
+      <label>Message</label>
+      <textarea name="message" rows="4" placeholder="Write your message"></textarea>
+      <button type="submit">Submit</button>
+      <p id="error"></p>
+    </form>
+  </div>
+  <script>
+  const form = document.getElementById('form');
+const error = document.getElementById('error');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const password = form.password.value.trim();
+  const message = form.message.value.trim();
+  let msg = '';
+
+  if (!name) msg = 'Name is required';
+  else if (!email.includes('@')) msg = 'Enter a valid email';
+  else if(!email.includes('.com'))msg = 'Enter a valid email (includes .com)';
+  else if (password.length < 6) msg = 'Password must be at least 6 characters';
+  else if (!message) msg = 'Message is required';
+  else { msg = 'Form submitted successfully!'; form.reset(); }
+
+  error.style.color = msg.includes('success') ? 'green' : 'red';
+  error.textContent = msg;
+});
+</script>
+</body>
+</html>

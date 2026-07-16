@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 30px;
+            font-family: cursive;
+        }
+
+        .para {
+            font-size: 30px;
+            font-family: cursive;
+            margin-top: 10%;
+            width: 40%;
+            height: 40%;
+            margin-left: 43px;
+            place-self: center;
+            padding-left: 13px;
+            background-color: #dfa8a8;
+            border-left: 8px solid brown;
+        }
+
+        #myButton {
+            place-content: center;
+            margin-left: 40%;
+            padding: 10px 20px;
+            font-size: 46px;
+            background-color: rgb(156, 44, 44);
+            border: 4px solid #500202;
+            cursor: pointer;
+            color: white;
+        }
+
+        dialog {
+            border: 4px solid #500202;
+            padding: 20px 12px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Task 4-[ Interactive Button Through Javascipt]</h2>
+    <p class="para"> On clicking on the button it changes its color from red to yellow. It is done by js code making a
+        functions and add css on it on clicking the button through the event listener.</p>
+    <dialog open>
+        <p>Click the button to change its color and style!</p>
+
+        <button id="myButton">Click Me</button>
+    </dialog>
+    <script>
+        const button = document.getElementById('myButton');
+        let flag = 0;
+        button.addEventListener('click', () => {
+            if (flag === 0) {
+                button.style.backgroundColor = 'yellow';
+                button.style.color = 'black';
+                button.style.border = '4px solid #000000';
+                button.style.fontSize = '50px';
+                button.style.borderRadius = '20px';
+                flag = 1;
+            } else {
+                button.style.backgroundColor = 'rgb(156, 44, 44)';
+                button.style.color = 'white';
+                button.style.border = '4px solid #500202';
+                button.style.fontSize = '46px';
+                flag = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

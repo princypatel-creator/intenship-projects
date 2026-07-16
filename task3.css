@@ -1,0 +1,225 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(209, 202, 202);
+    }
+
+    .navbar {
+      background-color: black;
+      width: 89%;
+      max-width: 89%;
+      height: auto;
+      min-height: 49px;
+      text-align: center;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 10px 19px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .navbar a {
+      font-size: clamp(18px, 2vw, 34px);
+      margin-left: 0;
+      text-decoration: none;
+      color: white;
+      padding: 3px 10px;
+    }
+
+    .navbar a:hover {
+      background-color: gray;
+      color: orange;
+      font-weight: bold;
+    }
+
+    #Home,
+    #About,
+    #Contact,
+    #Services {
+      width: 89%;
+      max-width: 89%;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #Home {
+      height: auto;
+      min-height: 580px;
+      text-align: center;
+      background-color: rgb(212, 169, 89);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    #Home h1 {
+      font-size: clamp(42px, 5vw, 74px);
+      margin-top: 20px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #Home h2 {
+      font-size: clamp(28px, 4vw, 56px);
+      font-family: cursive;
+      color: rgb(71, 40, 4);
+    }
+
+    img {
+      width: min(100%, 350px);
+      height: auto;
+      margin-top: 20px;
+      border-radius: 30%;
+      border: 2px solid rgb(104, 69, 5);
+      box-shadow: 0px 0px 10px 5px rgb(194, 183, 162);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-head h1:hover,
+    .main-head h2:hover {
+      cursor: pointer;
+      filter: drop-shadow(3px 2px 12px rgb(224, 217, 201));
+      font-weight: bold;
+    }
+
+    #About {
+      text-align: center;
+      background-color: rgb(143, 105, 36);
+      font-size: 23px;
+      padding: 20px;
+    }
+
+    #About h2,
+    #Contact h2,
+    #Services h2 {
+      font-size: clamp(28px, 4vw, 45px);
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+
+    #About h2:hover,
+    #Contact h2:hover,
+    #Services h2:hover {
+      cursor: pointer;
+      filter: drop-shadow(3px 2px 12px rgb(224, 217, 201));
+      text-decoration: underline;
+      font-family: cursive;
+    }
+
+    p {
+      width: 100%;
+      max-width: 100%;
+      font-size: clamp(16px, 2vw, 23px);
+      padding: 20px 0;
+      font-family: cursive;
+      word-spacing: 5px;
+      color: seashell;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    #Contact {
+      text-align: center;
+      background-color: rgb(136, 104, 48);
+      font-size: 23px;
+      padding: 20px;
+    }
+
+    .social {
+      font-size: clamp(32px, 5vw, 63px);
+    }
+
+    .social i:hover {
+      cursor: pointer;
+      color: orange;
+      filter: drop-shadow(3px 2px 12px rgb(192, 170, 120));
+    }
+
+    #Services {
+      text-align: center;
+      background-color: rgb(143, 105, 36);
+      font-size: 23px;
+      padding: 20px;
+    }
+
+    #Services ul li {
+      font-size: clamp(16px, 2vw, 23px);
+      padding: 12px 0;
+      font-family: monospace;
+      word-spacing: 3px;
+      color: rgb(8, 8, 8);
+      text-align: start;
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      #Home {
+        grid-template-columns: 1fr;
+      }
+
+      .main-head {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 12px;
+      }
+
+      .navbar .nav {
+        justify-content: center;
+      }
+
+      #Home,
+      #About,
+      #Contact,
+      #Services {
+        padding: 18px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar a {
+        font-size: 16px;
+        padding: 3px 8px;
+      }
+
+      #Home,
+      #About,
+      #Contact,
+      #Services {
+        width: 89%;
+        max-width: 89%;
+        padding: 15px 10px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      p {
+        padding: 12px 0;
+      }
+    }
+  
