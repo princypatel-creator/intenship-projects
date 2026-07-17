@@ -45,8 +45,25 @@
           z-index:1000;
           width:90%;
           margin-top:-4.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
-.inner-div a:hover{
+
+        .navbar-toggler {
+          display: none;
+          border: none;
+          background: transparent;
+          color: black;
+          font-size: 1.65rem;
+        }
+
+        .navbar-toggler:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+        .inner-div a:hover{
     color:red;
 }
 .carousel-div{
@@ -151,7 +168,150 @@ z-index:10;
     .icons:hover{
       color:red !important;
     }
-    </style>
+
+    @media (max-width: 768px) {
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-bar {
+        width: 100%;
+        margin-top: -82px;
+        padding: 0.5rem 0.8rem;
+      }
+
+      .navbar-toggler {
+        display: block;
+      }
+
+      .collapse.navbar-collapse {
+        width: 100%;
+      }
+
+      .inner-div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        font-size: 18px;
+      }
+
+      .carousel-div {
+        margin-top: 5rem;
+      }
+
+      .photo-con,
+      .about-content {
+        width: 100%;
+      }
+
+      .about-photo {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .main-heading {
+        font-size: 48px;
+      }
+
+      .about-p {
+        font-size: 18px;
+      }
+
+      .photos-div {
+        position: relative;
+        width: 100%;
+        padding-bottom: 2rem;
+      }
+
+      .photos-div h2 {
+        font-size: 34px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+      }
+
+      .shoe1,
+      .shoe2,
+      .shoe3,
+      .shoe4 {
+        position: relative;
+        margin: 1rem auto;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      .shoe1 img,
+      .shoe2 img,
+      .shoe3 img,
+      .shoe4 img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      #story {
+        margin-top: 4rem;
+      }
+
+      .story-div {
+        margin-top: 2rem;
+        border-left: none;
+        border-top: none;
+        padding: 1rem;
+      }
+
+      .story-div h2 {
+        font-size: 28px;
+      }
+
+      .table-bg thead, .table-bg tbody {
+        font-size: 20px;
+      }
+
+      .card {
+        width: 90%;
+        margin: 1rem auto;
+      }
+
+      .card .card-title,
+      .card .card-text,
+      .card .btn {
+        font-size: clamp(18px, 4vw, 24px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .inner-div {
+        font-size: 16px;
+        gap: 0.75rem;
+      }
+
+      .main-heading {
+        font-size: 36px;
+      }
+
+      .about-p {
+        font-size: 16px;
+      }
+
+      .photos-div h2 {
+        font-size: 28px;
+      }
+
+      .table-bg thead, .table-bg tbody {
+        font-size: 18px;
+      }
+
+      .card .card-title,
+      .card .card-text,
+      .card .btn {
+        font-size: clamp(16px, 4vw, 20px);
+      }
+    }
+      </style>
 </head>
 
 <body>
@@ -162,13 +322,19 @@ z-index:10;
                     <img src="https://cdn.logojoy.com/wp-content/uploads/20250107124120/puma-shoe-logo.webp" alt="Logo"
                         width="90" height="54" class="d-inline-block backtrans align-text-top">
                 </a>
-                <div class="inner-div">
-                    <div> <a class="navbar" href="#home">Home</a> </div>
-                    <div><a class="navbar" href="#about">About Us</a> </div>
-                <div> <a class="navbar" href="#gallery">Gallery</a>  </div>   
-                <div> <a class="navbar" href="#news">Updates</a>  </div>    
-                <div> <a class="navbar" href="#contact">Contact</a>  </div>    
-            </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+                    aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+                    <div class="inner-div">
+                        <div> <a class="navbar" href="#home">Home</a> </div>
+                        <div><a class="navbar" href="#about">About Us</a> </div>
+                        <div> <a class="navbar" href="#gallery">Gallery</a>  </div>   
+                        <div> <a class="navbar" href="#news">Updates</a>  </div>    
+                        <div> <a class="navbar" href="#contact">Contact</a>  </div>    
+                    </div>
+                </div>
             </div>
 
         </nav>
@@ -211,7 +377,7 @@ z-index:10;
     <h5 class="mt-0 main-heading">PUMA</h5>
     <p class="about-p">PUMA is one of the world’s leading sports brands, designing and developing innovative footwear, apparel, and accessories. Rooted in sport culture and driven by the mission to be the "Fastest Sports Brand in the World," we empower athletes and lifestyle consumers alike through our iconic cat logo and cutting-edge performance products.Welcome to the ultimate hub of speed, style, and innovation. At our PUMA brand store, we are dedicated to bringing the spirit of the Forever Faster ethos directly to you. Whether you are hitting the track, the turf, or the streets, our retail space is tailored to provide a premium shopping experience for every sports and lifestyle enthusiast</p>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-outline-danger" type="button">Button</button>
+  <button class="btn  fw-bolder btn-lg btn-outline-danger" type="button">Button</button>
 </div>
   </div>
 </div>
